@@ -55,6 +55,14 @@ set double sigma ${sigma}
 function SetMu(mu) {
   let c = `
 set double mu1 ${mu}
+`;
+  SetRuntimeConfig(c);
+  return c;
+}
+
+function SetMu_ignore_air(mu) {
+  let c = `
+set double mu1 ${mu}
 set double mu2 ${mu * 10}
 `;
   SetRuntimeConfig(c);
